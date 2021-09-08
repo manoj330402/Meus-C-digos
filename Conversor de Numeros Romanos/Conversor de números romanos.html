@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Conversor de números romanos</title>
+        <link href="css/style.css" rel="stylesheet" media="screen">
+        <link href="bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h1>Conversor de Números Romanos</h1>
+                    <label>Romano:</label>
+                        <input type="text" pattern="[A-Z]+" name="romano1" id="romano1" autofocus placeholder="Algarismo romano" onKeypress="return soletras(event)"> 
+                        <button class="btn btn-primary" onclick="romparaara()">Converter</button><br>
+                    <label>Arábico</label>
+                        <input type="text" name="arabe2" id="arabe2" size="10px" readonly value=""><br><br>
+                    
+                    <label>Arábico:</label>
+                        <input type="text" name="arabe1" id="arabe1" placeholder="Algarismo arábico" onKeypress="return sonumeros(event)">
+                        <button class="btn btn-primary" onclick="apapararom()">Converter</button><br>
+                    <label>Romano</label>
+                        <input type="text" name="romano2" id="romano2" size="10px" readonly value="">
+                </div>
+        </div>
+
+        <script src="bootstrap.min.js"></script>
+        <script src="jquery.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+    </html> 
