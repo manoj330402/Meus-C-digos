@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu');
+
+:root
+{
+    --cor-bg-esquerda: rgba(87, 84, 236, 0.7);
+    --cor-bg-direita: rgba(43, 43, 43, 0.8);
+    --cor-botao-esquerda-hover: rgba(87, 84, 236, 1);
+    --cor-botao-direita-hover: rgba(28, 122, 28, 1);
+    --tamanho-hover: 75%;
+    --tamanho-restante: 25%;
+    --velocidade: 1000ms
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1
+{
+    font-size: 4rem;
+    color: #FFF;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.btn
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #FFF;
+    border: #FFF solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+}
+
+.split.esquerda .btn:hover
+{
+    background-color: var(--cor-botao-esquerda-hover);
+    border-color: var(--cor-botao-esquerda-hover);
+}
+
+.split.direita .btn:hover
+{
+    background-color: var(--cor-botao-direita-hover);
+    border-color: var(--cor-botao-direita-hover);
+}
+
+.container
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.split
+{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.esquerda
+{
+    left: 0;
+    background-image: url('playstation5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.esquerda::before
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-bg-esquerda);
+}
+
+.split.direita
+{
+    right: 0;
+    background-image: url('xboxseriesx.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.direita::before
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-bg-direita);
+}
+
+.split.direita, 
+.split.esquerda, 
+.split.direita::before, 
+.split.esquerda::before
+{
+    transition: all var(--velocidade) ease;
+}
+
+.hover-esquerda .esquerda
+{
+    width: var(--tamanho-hover);
+}
+
+.hover-esquerda .direita
+{
+    width: var(--tamanho-restante);
+}
+
+.hover-direita .direita
+{
+    width: var(--tamanho-hover);
+}
+
+.hover-direita .esquerda
+{
+    width: var(--tamanho-restante);
+}
+
+@media(max-width: 800px)
+{
+    h1
+    {
+        font-size: 2rem;
+        top: 30%;
+    }
+
+    .btn
+    {
+        padding: 1.2rem;
+        width: 12rem;
+    }
+}
